@@ -1,40 +1,53 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 [RequireComponent(typeof(SteamVR_TrackedObject))]
 
 public class ContactNotes : MonoBehaviour {
 
-    SteamVR_TrackedObject trackedObj;
+	SteamVR_TrackedObject trackedObj;
 
-	void Start () {
-        trackedObj = GetComponent<SteamVR_TrackedObject>();
-	}
-	
-	void Update () {
-	
+
+	void Awake () {
+		trackedObj = GetComponent<SteamVR_TrackedObject>();
 	}
 
-	void FixedUpdate(){
+
+	void Update(){
+
+
+	}
+
+	void OnTriggerStay(Collider col) {
+	
+		Debug.Log ("you have collided with " + col.name);
 
 		//this is device is the wand. 
 		SteamVR_Controller.Device device = SteamVR_Controller.Input ((int)trackedObj.index);
 
-		//if we touch the trigger
+		NoteScript collidedNote = col.GetComponent<NoteScript>(); 
+		//if we touch the trigger with the wand.....
 		if (device.GetTouch (SteamVR_Controller.ButtonMask.Trigger)) {
 			//small debug
-			Debug.Log ("The controller is being held down"); 
+			Debug.Log ("The controller is being held down and touching something...."); 
+			Transform point = collidedNote.getScale();
+			float percent = collidedNote.getPercent (point);
 
-			//if the 'device' = wand is touching 90% is perfect
-			//show visual.... 
-
-			//if the wand is touching 80% is good
-
-			//if the wand is touching 70% is okay
-
-			//anything < 70 is bad!
+			if (percent >= 90) {
+				//perfect
+			} else if (percent >= 80 && percent < 90) {
+				//gg
+			} else if (percent >= 60 && percent < 80) {
+				//ok
+			} else {
+				//bad
+			}
 
 		}
+
+		collidedNote.destroy ();
 	}
+		
 			
 }

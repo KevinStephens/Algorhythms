@@ -15,6 +15,14 @@ public class NoteScript : MonoBehaviour
 		alive = true;
 
 	}
+	public void destroy()
+	{
+		setGone();
+		Debug.Log ("ITS GONE YO" + alive);
+		//if you miss it'll be gone, show code that it's gone.
+		Destroy(gameObject);
+		Destroy (indication);
+	}
 
 	// Update is called once per frame
 	void Update ()
@@ -25,13 +33,10 @@ public class NoteScript : MonoBehaviour
 
 		if (currentvector.localScale.x <= maxvector.localScale.x * 1.2) {
 			currentvector.localScale += Vector3.one * speed * Time.deltaTime;
+
 		}
-		else if (currentvector.localScale.x > (maxvector.localScale.x * 1.2f))  {
-			setGone();
-			Debug.Log ("ITS GONE YO" + alive);
-			//if you miss it'll be gone, show code that it's gone.
-			Destroy(gameObject);
-			Destroy (indication);
+		else if (currentvector.localScale.x > (maxvector.localScale.x * 1.2f))  { //player was too slow
+			destroy();
 		}
 
 	}
@@ -40,6 +45,23 @@ public class NoteScript : MonoBehaviour
 
 	void setGone(){
 		alive = false;
+	}
+
+	public Transform getScale(){
+		return note;
+	}
+
+	 public float getPercent(Transform vector){
+		float percent;
+		float answer;
+		percent = Mathf.Abs(vector.localScale.x - maxvector.localScale.x);
+		if (vector.localScale.x <= 1.0f) {
+			answer = percent * 100.0f;
+		} else { //the note bubble is bigger than the outline bubble
+			answer = (maxvector.localScale.x / vector.localScale.x) * 100.0f;
+		}
+
+		return answer;
 	}
 
 }

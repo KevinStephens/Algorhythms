@@ -17,15 +17,24 @@ public class ContactNotes : MonoBehaviour {
 
 	void FixedUpdate(){
 
-		//this is device for controller
-		SteamVR_Controller.Device device = SteamVR_Controller.Input((int)trackedObj.index);
+		//this is device is the wand. 
+		SteamVR_Controller.Device device = SteamVR_Controller.Input ((int)trackedObj.index);
 
 		//if we touch the trigger
-		if (device.GetTouch(SteamVR_Controller.ButtonMask.Trigger))
-		{
+		if (device.GetTouch (SteamVR_Controller.ButtonMask.Trigger)) {
 			//small debug
-			Debug.Log("The controller is being held down"); 
+			Debug.Log ("The controller is being held down"); 
+
+			//if the 'device' = wand is touching 90% is perfect
+			//show visual.... 
+
+			//if the wand is touching 80% is good
+
+			//if the wand is touching 70% is okay
+
+			//anything < 70 is bad!
 
 		}
+	}
 			
 }

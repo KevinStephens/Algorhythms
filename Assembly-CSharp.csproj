@@ -48,10 +48,10 @@
      <Compile Include="Assets\ControllerScript.cs" />
      <Compile Include="Assets\HeadCameraScript.cs" />
      <Compile Include="Assets\HeadCameraScriptt.cs" />
+     <Compile Include="Assets\NoteScript.cs" />
      <Compile Include="Assets\Scripts\ContactNotes.cs" />
      <Compile Include="Assets\Scripts\CountDownScript.cs" />
      <Compile Include="Assets\Scripts\NoteResizing.cs" />
-     <Compile Include="Assets\Scripts\NoteScript.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_Teleporter.cs" />

@@ -1,0 +1,17 @@
+/Users/Phansa/Desktop/Algorhythms/Temp/bin/Debug/UnityEngine.dll
+/Users/Phansa/Desktop/Algorhythms/Temp/bin/Debug/UnityEditor.dll
+/Users/Phansa/Desktop/Algorhythms/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/Phansa/Desktop/Algorhythms/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/Phansa/Desktop/Algorhythms/Temp/bin/Debug/Mono.Cecil.dll
+/Users/Phansa/Desktop/Algorhythms/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/Phansa/Desktop/Algorhythms/Temp/bin/Debug/Unity.DataContract.dll
+/Users/Phansa/Desktop/Algorhythms/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/Phansa/Desktop/Algorhythms/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/Phansa/Desktop/Algorhythms/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/Phansa/Desktop/Algorhythms/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/Phansa/Desktop/Algorhythms/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/Phansa/Desktop/Algorhythms/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/Phansa/Desktop/Algorhythms/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/Phansa/Desktop/Algorhythms/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/Phansa/Desktop/Algorhythms/obj/Debug/Assembly-CSharp.dll
+/Users/Phansa/Desktop/Algorhythms/obj/Debug/Assembly-CSharp.dll.mdb

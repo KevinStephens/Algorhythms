@@ -6,9 +6,9 @@ public class CountDownScript : MonoBehaviour{
 	public float countdown = 3.0f;
 
 	void Update(){
-		SteamVR_Controller.Device device = SteamVR_Controller.Input();
+		SteamVR_Controller.Device device = SteamVR_Controller.Input(0);
 
-		//if we touch the trigger
+		//if we touch the trigger the count down will start.....
 		if (device.GetTouch (SteamVR_Controller.ButtonMask.Trigger)) {
 			//start the countdown 
 			countdown -= Time.deltaTime;

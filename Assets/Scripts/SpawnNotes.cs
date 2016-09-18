@@ -33,10 +33,9 @@ public class SpawnNotes : MonoBehaviour {
     string filePath = System.IO.Path.GetFullPath("TwinkleV1.txt");
 		StreamReader sr = new StreamReader (filePath);
 		startingticks = System.DateTime.Now.Ticks;
-<<<<<<< HEAD
-=======
+
 		MySongNotes = new List<note>();
->>>>>>> 6cf54596446e0cc2fb6476b7fadd3e83006b58de
+
 		while (!sr.EndOfStream)
 		{
 			string Note = sr.ReadLine();

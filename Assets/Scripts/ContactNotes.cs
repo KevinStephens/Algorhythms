@@ -37,15 +37,15 @@ public class ContactNotes : MonoBehaviour
         {
             collidedNote = col.GetComponent<NoteScript>();
         }
-        //if we touch the trigger with the wand.....
-        //if (device.GetTouch(SteamVR_Controller.ButtonMask.Trigger))
-        //{
+            //if we touch the trigger with the wand.....
+            //if (device.GetTouch(SteamVR_Controller.ButtonMask.Trigger))
+            //{
             //small debug
-            
-        
+
+
             Transform point = collidedNote.getScale();
             float percent = collidedNote.getPercent(point);
-        
+
             
             
 

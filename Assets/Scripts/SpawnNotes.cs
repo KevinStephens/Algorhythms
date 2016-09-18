@@ -35,7 +35,6 @@ public class SpawnNotes : MonoBehaviour {
 
 		StreamReader sr = new StreamReader (filePath);
 		startingticks = System.DateTime.Now.Ticks;
-		List<note> MySongNotes = new List<note>();
 		while (!sr.EndOfStream)
 		{
 			string Note = sr.ReadLine();

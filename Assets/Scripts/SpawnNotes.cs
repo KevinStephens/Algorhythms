@@ -31,7 +31,7 @@ public class SpawnNotes : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 
-    string filePath = System.IO.Path.GetFullPath("TestNotes.txt");
+    string filePath = System.IO.Path.GetFullPath("TwinkleData2.txt");
 		StreamReader sr = new StreamReader (filePath);
 		startingticks = System.DateTime.Now.Ticks;
 		MySongNotes = new Queue<note>();

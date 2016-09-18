@@ -13,7 +13,7 @@ public class CountDownScript : MonoBehaviour{
 			//start the countdown 
 			countdown -= Time.deltaTime;
 			//small debug
-			Debug.Log("Trigger for start was pressed");
+			Debug.Log("Trigger for start was pressed countdown initiating...");
 
 			//change the position of the curtain object. 
 			transform.position += new Vector3 (speed * Time.deltaTime, 0.0f, 0.0f);

@@ -18,8 +18,11 @@ public class NoteScript : MonoBehaviour
 	public void destroy()
 	{
 		setGone();
-		//if you miss it'll be gone, show code that it's gone.
-		Destroy(gameObject);
+        //if you miss it'll be gone, show code that it's gone.
+        if (gameObject != null)
+        {
+            Destroy(gameObject);
+        }
 		Destroy (indication);
 	}
 
@@ -54,13 +57,23 @@ public class NoteScript : MonoBehaviour
 	 public float getPercent(Transform vector){
 		float percent;
 		float answer;
-		percent = Mathf.Abs(vector.localScale.x - maxvector.localScale.x);
+        if (vector.localScale.x < maxvector.localScale.x)
+        {
+            answer = (vector.localScale.x / maxvector.localScale.x) * 100.0f;
+        } else if (maxvector.localScale.x < vector.localScale.x)
+        {
+            answer = (maxvector.localScale.x / vector.localScale.x) * 100.0f;
+        } else
+        { // they are equal aka absolute perfect
+            answer = 100.0f;
+        }
+		/*percent = Mathf.Abs(vector.localScale.x - maxvector.localScale.x);
 		if (vector.localScale.x <= 1.0f) {
 			answer = percent * 100.0f;
 		} else { //the note bubble is bigger than the outline bubble
 			answer = (maxvector.localScale.x / vector.localScale.x) * 100.0f;
 		}
-
+        */
 		return answer;
 	}
 

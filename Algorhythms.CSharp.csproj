@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\NoteResizing.cs" />
     <Compile Include="Assets\Scripts\NoteScript.cs" />
+    <Compile Include="Assets\Scripts\ParticleFeedback.cs" />
     <Compile Include="Assets\Scripts\SpawnNotes.cs" />
     <Compile Include="Assets\Scripts\TimingHolder.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />

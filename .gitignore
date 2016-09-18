@@ -1,0 +1,6 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Temp/UnityVS_obj/Debug
+/Temp/UnityVS_bin/Debug

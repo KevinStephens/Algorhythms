@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Day Night Cycle\Editor\DayNightControllerEditor.cs" />
      <Compile Include="Assets\SteamVR\Editor\SteamVR_Editor.cs" />
      <Compile Include="Assets\SteamVR\Editor\SteamVR_RenderModelEditor.cs" />
      <Compile Include="Assets\SteamVR\Editor\SteamVR_Settings.cs" />
@@ -52,6 +53,8 @@
      <Compile Include="Assets\SteamVR\Editor\SteamVR_Update.cs" />
      <None Include="Assets\SteamVR\Resources\SteamVR_Fade.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_ClearAll.shader" />
+     <None Include="Assets\Shaders\Outline.shader" />
+     <None Include="Assets\Day Night Cycle\ReadMe.txt" />
      <None Include="Assets\Timings\TwinkleV1.txt" />
      <None Include="Assets\Shaders\OutlineShader.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_SphericalProjection.shader" />

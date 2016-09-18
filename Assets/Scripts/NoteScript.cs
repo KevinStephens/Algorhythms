@@ -35,13 +35,13 @@ public class NoteScript : MonoBehaviour
 
 		}
 		else if (currentvector.localScale.x > (maxvector.localScale.x * 1.2f))  { //player was too slow
-<<<<<<< HEAD
+
 			//when you're missed . 
 			destroy();
-=======
+
             Debug.Log("Missed a note");
             destroy();
->>>>>>> 2c99c4be56a547656c2dbd086557ceaa9256ff07
+
 		}
 
 	}

@@ -2,12 +2,13 @@
 using System.Collections;
 
 
-[RequireComponent(typeof(SteamVR_TrackedObject))]
+//[RequireComponent(typeof(SteamVR_TrackedObject))]
 
 public class ContactNotes : MonoBehaviour
 {
 
     SteamVR_TrackedObject trackedObj;
+    SteamVR_Controller.Device device;
 
 
     void Awake()
@@ -18,17 +19,17 @@ public class ContactNotes : MonoBehaviour
 
     void Update()
     {
-
+        //device = SteamVR_Controller.Input((int)trackedObj.index);
+        //Debug.Log("Update");
 
     }
 
-    void OnCollisionStay(Collider col)
+    void OnTriggerEnter(Collider col)
     {
-
-        Debug.Log("you have collided with " + col.name);
-
+        Debug.Log("you have collided with " + col.gameObject.name);
+        
         //this is device is the wand. 
-        SteamVR_Controller.Device device = SteamVR_Controller.Input((int)trackedObj.index);
+        
 
         NoteScript collidedNote = col.GetComponent<NoteScript>();
         //if we touch the trigger with the wand.....

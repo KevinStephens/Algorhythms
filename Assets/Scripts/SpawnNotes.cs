@@ -24,17 +24,19 @@ public class SpawnNotes : MonoBehaviour {
 	
 	}
 	private long offsetticks;
-	List<note> MySongNotes;
+	private List<note> MySongNotes;
 	private long startingticks;
 
 	// Use this for initialization
 	void Awake () {
 
     string filePath = System.IO.Path.GetFullPath("TwinkleV1.txt");
-
-
 		StreamReader sr = new StreamReader (filePath);
 		startingticks = System.DateTime.Now.Ticks;
+<<<<<<< HEAD
+=======
+		MySongNotes = new List<note>();
+>>>>>>> 6cf54596446e0cc2fb6476b7fadd3e83006b58de
 		while (!sr.EndOfStream)
 		{
 			string Note = sr.ReadLine();
@@ -55,10 +57,9 @@ public class SpawnNotes : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		Debug.Log ("WHY IS IT NOT WORKING");
 		long currentticks = System.DateTime.Now.Ticks;
 		offsetticks = currentticks - startingticks;
-
+ 
 		foreach(var n in MySongNotes) {
 			if (n.tick < offsetticks && n.spawned == false) {
 				//spawn note

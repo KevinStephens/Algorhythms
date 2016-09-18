@@ -2,7 +2,7 @@
 using System.Collections;
 
 
-//[RequireComponent(typeof(SteamVR_TrackedObject))]
+[RequireComponent(typeof(SteamVR_TrackedObject))]
 
 public class ContactNotes : MonoBehaviour
 {
@@ -30,18 +30,24 @@ public class ContactNotes : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
         Debug.Log("you have collided with " + col.gameObject.name);
-        
-        //this is device is the wand. 
-        
 
-        NoteScript collidedNote = col.GetComponent<NoteScript>();
-        //if we touch the trigger with the wand.....
-        if (device.GetTouch(SteamVR_Controller.ButtonMask.Trigger))
+        //this is device is the wand. 
+        NoteScript collidedNote = null;
+        if (col != null)
         {
+            collidedNote = col.GetComponent<NoteScript>();
+        }
+        //if we touch the trigger with the wand.....
+        //if (device.GetTouch(SteamVR_Controller.ButtonMask.Trigger))
+        //{
             //small debug
-            Debug.Log("The controller is being held down and touching something....");
+            
+        
             Transform point = collidedNote.getScale();
             float percent = collidedNote.getPercent(point);
+        
+            
+            
 
             if (percent >= 90)
             {
@@ -62,7 +68,7 @@ public class ContactNotes : MonoBehaviour
                 Debug.Log("ur so bad");
             }
 
-        }
+        
 
         collidedNote.destroy();
     }
@@ -75,10 +81,9 @@ public class ContactNotes : MonoBehaviour
 
         NoteScript collidedNote = col.GetComponent<NoteScript>();
         //if we touch the trigger with the wand.....
-        if (device.GetTouch(SteamVR_Controller.ButtonMask.Trigger))
-        {
+       // if (device.GetTouch(SteamVR_Controller.ButtonMask.Trigger))
+       // {
             //small debug
-            Debug.Log("The controller is being held down and touching something....");
             Transform point = collidedNote.getScale();
             float percent = collidedNote.getPercent(point);
 
@@ -103,7 +108,7 @@ public class ContactNotes : MonoBehaviour
             {
                 bad++;
                 Debug.Log("bad: " + bad);
-            }
+           // }
             collidedNote.destroy();
         }
     }

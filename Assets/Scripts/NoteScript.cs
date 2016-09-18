@@ -18,7 +18,6 @@ public class NoteScript : MonoBehaviour
 	public void destroy()
 	{
 		setGone();
-		Debug.Log ("ITS GONE YO" + alive);
 		//if you miss it'll be gone, show code that it's gone.
 		Destroy(gameObject);
 		Destroy (indication);
@@ -36,7 +35,8 @@ public class NoteScript : MonoBehaviour
 
 		}
 		else if (currentvector.localScale.x > (maxvector.localScale.x * 1.2f))  { //player was too slow
-			destroy();
+            Debug.Log("Missed a note");
+            destroy();
 		}
 
 	}

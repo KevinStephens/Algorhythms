@@ -36,6 +36,7 @@ public class NoteScript : MonoBehaviour
 
 		}
 		else if (currentvector.localScale.x > (maxvector.localScale.x * 1.2f))  { //player was too slow
+			//when you're missed . 
 			destroy();
 		}
 

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 
@@ -51,18 +52,25 @@ public class SpawnNotes : MonoBehaviour {
 	
 	}
 
-	// Update is called once per frame
-	void Update () {
-		long currentticks = System.DateTime.Now.Ticks;
-		offsetticks = currentticks - startingticks;
- 
-		foreach(var n in MySongNotes) {
-			if (n.tick < offsetticks && n.spawned == false) {
-				//spawn note
-				Instantiate(prefab, new Vector3(n.pos.x, n.pos.y, n.pos.z), Quaternion.identity);
+    // Update is called once per frame
+
+    void Update()
+    {
+        long currentticks = System.DateTime.Now.Ticks;
+        offsetticks = currentticks - startingticks;
+
+        var MyNote = MySongNotes.Where(x => (x.tick < currentticks) && (x.spawned == false)).ToList();
+
+        foreach (var n in MyNote)
+        {
+            if (n.tick < offsetticks && n.spawned == false)
+            {
+                //spawn note
+                Instantiate(prefab, new Vector3(n.pos.x, n.pos.y, n.pos.z), Quaternion.identity);
                 //n.spawned = true;
                 MySongNotes.Dequeue();
-			}
-		}
-	}
+            }
+        }
+    }
+}
 }

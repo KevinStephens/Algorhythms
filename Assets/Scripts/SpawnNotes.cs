@@ -24,7 +24,7 @@ public class SpawnNotes : MonoBehaviour {
 	
 	}
 	private long offsetticks;
-	private List<note> MySongNotes;
+	private Queue<note> MySongNotes;
 	private long startingticks;
 
 	// Use this for initialization
@@ -34,7 +34,11 @@ public class SpawnNotes : MonoBehaviour {
 		StreamReader sr = new StreamReader (filePath);
 		startingticks = System.DateTime.Now.Ticks;
 
+
 		MySongNotes = new List<note>();
+
+
+		MySongNotes = new Queue<note>();
 
 		while (!sr.EndOfStream)
 		{
@@ -46,9 +50,8 @@ public class SpawnNotes : MonoBehaviour {
 			float.TryParse(tempinput[0], out TempNote.pos.x);
 			float.TryParse(tempinput[1], out TempNote.pos.y);
 			float.TryParse(tempinput[2], out TempNote.pos.z);
-			long.TryParse(tempinput[3], out tempticks);
-			TempNote.tick = tempticks - startingticks;
-			MySongNotes.Add(TempNote);
+			long.TryParse(tempinput[3], out TempNote.tick);
+			MySongNotes.Enqueue(TempNote);
 		}
 	
 	
@@ -63,7 +66,8 @@ public class SpawnNotes : MonoBehaviour {
 			if (n.tick < offsetticks && n.spawned == false) {
 				//spawn note
 				Instantiate(prefab, new Vector3(n.pos.x, n.pos.y, n.pos.z), Quaternion.identity);
-				//n.spawned = true;
+                //n.spawned = true;
+                MySongNotes.Dequeue();
 			}
 		}
 	}

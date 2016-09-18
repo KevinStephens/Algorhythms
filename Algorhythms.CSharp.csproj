@@ -63,6 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CalculateScore.cs" />
+    <Compile Include="Assets\Day Night Cycle\Scripts\DayNightController.cs" />
+    <Compile Include="Assets\Day Night Cycle\Scripts\DemoScripts\RoatateCamera.cs" />
     <Compile Include="Assets\Scripts\ContactNotes.cs" />
     <Compile Include="Assets\Scripts\ControllerScript.cs" />
     <Compile Include="Assets\Scripts\CountDownScript.cs" />
@@ -109,6 +112,7 @@
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_Utils.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Day Night Cycle\ReadMe.txt" />
     <None Include="Assets\Shaders\Outline.shader" />
     <None Include="Assets\Shaders\OutlineShader.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_AlphaOut.shader" />

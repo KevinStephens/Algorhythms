@@ -8,6 +8,7 @@ using System.Text;
 
 public class SpawnNotes : MonoBehaviour {
 	public GameObject prefab;
+    public AudioSource clip;
 
 	private struct position
 	{
@@ -30,6 +31,8 @@ public class SpawnNotes : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
+
+        clip.PlayDelayed(0.9f);
 
     string filePath = System.IO.Path.GetFullPath("TwinkleData2.txt");
 		StreamReader sr = new StreamReader (filePath);

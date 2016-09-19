@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using System.Collections;
 using VRTK;
@@ -18,12 +19,10 @@ public class ButtonScript : MonoBehaviour
     private void ButtonOnExit(object sender, UIPointerEventArgs e)
     {
         Debug.Log("UI Pointer exited " + e.previousTarget.name + " on Controller index [" + e.controllerIndex + "]");
-        Debug.Log("YEEAAAH");
-
 
         if (e.previousTarget == button)
         {
-            Debug.Log("YEEAAAH!!!!!!!!!!!");
+            SceneManager.LoadScene("Main", LoadSceneMode.Single);
         }
     }
 

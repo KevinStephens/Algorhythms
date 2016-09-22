@@ -25,10 +25,7 @@ public class ContactNotes : MonoBehaviour
 
     void Update()
     {
-        //device = SteamVR_Controller.Input((int)trackedObj.index);
-        //Debug.Log("Update");
-        //ParticleSystem test = gameObject.GetComponent<ParticleSystem>();
-        //test.Play();
+
     }
 
     void OnTriggerEnter(Collider col)
@@ -40,10 +37,6 @@ public class ContactNotes : MonoBehaviour
         if (col.gameObject.name == "Indication Sphere")
         {
             collidedNote = col.GetComponent<NotesVer2>();
-
-
-            //small debug
-
             Transform point = collidedNote.getScale();
             float percent = collidedNote.getPercent(point);
 
@@ -52,7 +45,8 @@ public class ContactNotes : MonoBehaviour
                 perfect++;
                 Debug.Log("perfect: " + perfect);
                 Debug.Log("perfect Percent: " + percent);
-                Instantiate(perfect_particles, col.transform.position, Quaternion.identity);
+                //Spawns the particles at the contact point, with the particles aiming upwards
+                Instantiate(perfect_particles, col.transform.position, Quaternion.Euler(new Vector3(270, 0, 0)));
     
             }
             else if (percent >= 85 && percent < 95)
@@ -60,14 +54,16 @@ public class ContactNotes : MonoBehaviour
                 good++;
                 Debug.Log("good: " + good);
                 Debug.Log("good Percent: " + percent);
-                Instantiate(good_particles, col.transform.position, Quaternion.identity);
+                //Spawns the particles at the contact point, with the particles aiming upwards
+                Instantiate(good_particles, col.transform.position, Quaternion.Euler(new Vector3(270, 0, 0)));
             }
             else if (percent >= 65 && percent < 85)
             {
                 okay++;
                 Debug.Log("okay: " + okay);
                 Debug.Log("okay Percent: " + percent);
-                Instantiate(okay_particles, col.transform.position, Quaternion.identity);
+                //Spawns the particles at the contact point, with the particles aiming upwards
+                Instantiate(okay_particles, col.transform.position, Quaternion.Euler(new Vector3(270, 0, 0)));
             }
             else if (percent >= 0 && percent < 65)
             {
@@ -110,47 +106,4 @@ public class ContactNotes : MonoBehaviour
 
         return gradeLetter;
     }
-    /*
-    void OnTriggerStay(Collider col)
-    {
-        Debug.Log("you have stay collided with " + col.gameObject.name);
-
-        //this is device is the wand. 
-
-
-        NoteScript collidedNote = col.GetComponent<NoteScript>();
-        //if we touch the trigger with the wand.....
-       // if (device.GetTouch(SteamVR_Controller.ButtonMask.Trigger))
-       // {
-            //small debug
-            Transform point = collidedNote.getScale();
-            float percent = collidedNote.getPercent(point);
-
-            if (percent >= 90)
-            {
-                //perfect
-                perfect++;
-                Debug.Log("perfect: " + perfect);
-            }
-            else if (percent >= 80 && percent < 90)
-            {
-                //gg
-                good++;
-                Debug.Log("good: " + good);
-            }
-            else if (percent >= 60 && percent < 80)
-            {
-                okay++;
-                Debug.Log("okay: " + okay);
-            }
-            else
-            {
-                bad++;
-                Debug.Log("bad: " + bad);
-            }
-
-            collidedNote.destroy();
-        
-    }
-    */
 }

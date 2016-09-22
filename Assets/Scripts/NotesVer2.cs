@@ -64,7 +64,7 @@ public class NotesVer2 : MonoBehaviour
             answer = (maxvector.localScale.x / vector.localScale.x) * 100.0f;
         }
         else
-        { // they are equal aka absolute perfect
+        { // they are equal aka absolute perfect hit
             answer = 100.0f;
         }
         return answer;

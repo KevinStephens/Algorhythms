@@ -23,7 +23,7 @@ public class NotesVer2 : MonoBehaviour
         {
             currentvector.localScale -= Vector3.one * speed * Time.deltaTime;
         }
-        else if (currentvector.localScale.x < (maxvector.localScale.x * 0.8f))
+        else if (currentvector.localScale.x < (maxvector.localScale.x * 0.9f))
         { //player was too slow
             Debug.Log("Missed a note");
             destroy();

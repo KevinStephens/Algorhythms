@@ -36,10 +36,10 @@ public class ContactNotes : MonoBehaviour
         Debug.Log("you have collided with " + col.gameObject.name);
 
         //this is device is the wand. 
-        NoteScript collidedNote = null;
-        if (col.gameObject.name == "Note sphere")
+        NotesVer2 collidedNote = null;
+        if (col.gameObject.name == "Indication Sphere")
         {
-            collidedNote = col.GetComponent<NoteScript>();
+            collidedNote = col.GetComponent<NotesVer2>();
 
 
             //small debug

@@ -6,7 +6,6 @@ using System.Collections;
 
 public class ContactNotes : MonoBehaviour
 {
-
     SteamVR_TrackedObject trackedObj;
     SteamVR_Controller.Device device;
     private int perfect;
@@ -16,6 +15,7 @@ public class ContactNotes : MonoBehaviour
     public Transform perfect_particles;
     public Transform good_particles;
     public Transform okay_particles;
+
     void Awake()
     {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
@@ -81,29 +81,48 @@ public class ContactNotes : MonoBehaviour
        
     }
 
-    public int totalScore()
+    public int playerScore()
     {
-        return ((perfect * 10) + (good * 6) + (okay * 2));
+        return ((perfect * 100) + (good * 75) + (okay * 25));
     }
 
-    //grade based on the perfect hits only.
+    public int totalNotes()
+    {
+        return perfect + good + okay + bad;
+    }
+
+    public int maxScore()
+    {
+        int numNotes = totalNotes();
+        return numNotes * 100;
+    }
+
+    //Takes the current score and divides it by the maximum score possible
     public string gradeGenerator(int score)
     {
         string gradeLetter = "F";
+        int maximumScore = maxScore();
         
-        if ( perfect >= 15)
+        if (score / maximumScore == 1)
+        {
+            gradeLetter = "S";
+        }
+        else if (score / maximumScore < 1)
         {
             gradeLetter = "A";
         }
-        else if (perfect >= 10 && perfect < 15)
+        else if (score / maximumScore < 0.90)
         {
             gradeLetter = "B";
         }
-        else if (perfect >= 5 && perfect < 10)
+        else if (score / maximumScore < 0.80)
         {
             gradeLetter = "C";
         }
-
+        else if (score / maximumScore < 0.70 && score / maximumScore >= 0.60)
+        {
+            gradeLetter = "D";
+        }
         return gradeLetter;
     }
 }

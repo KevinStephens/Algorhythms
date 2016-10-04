@@ -63,7 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CalculateScore.cs" />
     <Compile Include="Assets\Day Night Cycle\Scripts\DayNightController.cs" />
     <Compile Include="Assets\Day Night Cycle\Scripts\DemoScripts\RoatateCamera.cs" />
     <Compile Include="Assets\Prefabs\MenuPrefab\ButtonScript.cs" />
@@ -81,6 +80,7 @@
     <Compile Include="Assets\Scripts\ParticleFeedback.cs" />
     <Compile Include="Assets\Scripts\SpawnNotes.cs" />
     <Compile Include="Assets\Scripts\TimingHolder.cs" />
+    <Compile Include="Assets\Scripts\displayScores.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_Teleporter.cs" />
